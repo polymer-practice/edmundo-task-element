@@ -1,13 +1,37 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
 
 <dom-module id="task-element">
   <template>
     <style>
       :host {
         display: block;
+        --icon-size: var(--icon-size-task-element, 20px);
+        --primary-color: var(--primary-color-task-element, #3f51b5);
+        --secondary-color: var(--secondary-color-task-element, #fff);
+
       }
+      .element-item-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .element-item__title {
+        color: var(--primary-color);
+        margin-left: 5px;
+      }
+      .element-item__bullet{
+        color: var(--primary-color);
+      } 
+
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <div class="element-item-wrapper">
+      <iron-icon icon="icons:radio-button-checked" class="element-item__bullet"></iron-icon>
+      <h3 class="element-item__title">[[itemTitle]]</h3>
+    </div>
+    
   </template>
 
   <script>
@@ -23,9 +47,9 @@
       static get is() { return 'task-element'; }
       static get properties() {
         return {
-          prop1: {
+          itemTitle: {
             type: String,
-            value: 'task-element'
+            value: 'element title'
           }
         };
       }
