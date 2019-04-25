@@ -24,15 +24,18 @@
         <template>
           <task-element
           id="task1"
+          key="1"
           item-title="Task 1"
           ></task-element>
           <task-element
           id="task2"
+          key="2"
           item-title="Task 2"
           is-done
           ></task-element>
           <task-element
           id="task3"
+          key="3"
           item-title="Task 3"
           is-cancelled
           ></task-element>
@@ -46,6 +49,15 @@
           Status task 2: ${task2.status}
           Status task 3: ${task3.status}
           `);
+          task1.addEventListener('pending', (event) => { console.log('Task 1 event pending: ', event); });
+          task1.addEventListener('done', (event) => { console.log('Task 1 event done: ', event); });
+          task1.addEventListener('cancel', (event) => { console.log('Task 1 event cancel: ', event); });
+          task2.addEventListener('pending', (event) => { console.log('Task 2 event pending: ', event); });
+          task2.addEventListener('done', (event) => { console.log('Task 2 event done: ', event); });
+          task2.addEventListener('cancel', (event) => { console.log('Task 2 event cancel: ', event); });
+          task3.addEventListener('pending', (event) => { console.log('Task 3 event pending: ', event); });
+          task3.addEventListener('done', (event) => { console.log('Task 3 event done: ', event); });
+          task3.addEventListener('cancel', (event) => { console.log('Task 3 event cancel: ', event); });
         </script>
       </demo-snippet>
     </div>
