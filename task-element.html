@@ -50,8 +50,23 @@
           itemTitle: {
             type: String,
             value: 'element title'
+          },
+          isDone: {
+            type: Boolean,
+            value: false
+          },
+          isCancelled: {
+            type: Boolean,
+            value: false
+          },
+          status: {
+            type: String,
+            computed: 'setStatus(isDone,isCancelled)'
           }
         };
+      }
+      setStatus( doneFlag,cancelledFlag) {
+        return doneFlag? 'task done' : cancelledFlag? 'task cancel' : 'task';
       }
     }
 

@@ -22,8 +22,31 @@
       <h3>Basic task-element demo</h3>
       <demo-snippet>
         <template>
-          <task-element></task-element>
+          <task-element
+          id="task1"
+          item-title="Task 1"
+          ></task-element>
+          <task-element
+          id="task2"
+          item-title="Task 2"
+          is-done
+          ></task-element>
+          <task-element
+          id="task3"
+          item-title="Task 3"
+          is-cancelled
+          ></task-element>
         </template>
+        <script>
+          let task1 = document.getElementById('task1');
+          let task2 = document.getElementById('task2');
+          let task3 = document.getElementById('task3');
+          console.log(`
+          Status task 1: ${task1.status}
+          Status task 2: ${task2.status}
+          Status task 3: ${task3.status}
+          `);
+        </script>
       </demo-snippet>
     </div>
   </body>
