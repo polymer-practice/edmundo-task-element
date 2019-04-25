@@ -11,23 +11,34 @@
         --icon-size: var(--icon-size-task-element, 20px);
         --primary-color: var(--primary-color-task-element, #3f51b5);
         --secondary-color: var(--secondary-color-task-element, #fff);
+        --done-color: var(--done-color-task-element, #38E896);
+        --cancelled-color: var(--cancelled-color-task-element, #E82C3F);
 
       }
-      .element-item-wrapper {
+      .task {
         align-items: center;
         display: flex;
         justify-content: flex-start;
+        color: var(--primary-color);
       }
       .element-item__title {
-        color: var(--primary-color);
         margin-left: 5px;
       }
-      .element-item__bullet{
+     
+      .task {
         color: var(--primary-color);
-      } 
+      }
+      .done {
+        color: var(--done-color);
+        text-decoration: line-through;
+      }
+      .cancel {
+        text-decoration: line-through;
+        color: var(--cancelled-color);
+      }
 
     </style>
-    <div class="element-item-wrapper">
+    <div class$=[[status]]>
       <iron-icon icon="icons:radio-button-checked" class="element-item__bullet"></iron-icon>
       <h3 class="element-item__title">[[itemTitle]]</h3>
     </div>
